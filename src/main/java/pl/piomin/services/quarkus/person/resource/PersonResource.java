@@ -22,7 +22,7 @@ public class PersonResource {
 
     @GET
     public List<Person> findAll() {
-        logger.info("IN -> findAll");
+        logger.info("IN: findAll");
         return repository.findAll()
                 .list();
     }
@@ -30,14 +30,14 @@ public class PersonResource {
     @GET
     @Path("/name/{name}")
     public List<Person> findByName(@PathParam("name") String name) {
-        logger.infof("IN -> findByName(%s)", name);
+        logger.infof("IN: findByName(%s)", name);
         return repository.findByName(name);
     }
 
     @GET
     @Path("/{id}")
     public Person findById(@PathParam("id") Long id) {
-        logger.infof("IN -> findById(%d)", id);
+        logger.infof("IN: findById(%d)", id);
         return repository.findById(id);
     }
 }
